@@ -21,11 +21,55 @@
 <br>
     </main>
     <article>
+      <div class="formulario">
+        <form action="" method="get" name="" onsubmit="event.preventDefault(); calcular()">
+          <p>
+            <label for="alt">Altura: </label>
+            <input type="number" name="alt" id="alt">
+          </p>
+          <br>
+          <p>
+            <label for="larg">Largura: </label>
+            <input type="number" name="larg" id="larg">
+          </p>  
+          <br>
+          <p id="tot" name="O total vai aparecer aqui">
+            <input type="submit" value="Calcular">
+          </p>
+        </form>
+      </div>
 
     </article>
     <footer>
 
       
     </footer>
+    <script>
+    function calcular()  {
+    let altura =Number(larg.value);
+    let largura = Number(alt.value);
+    total = ``
+    total = altura*largura;
+    tot.innerHTML += `"<br>"  Valor total: <strong> ${total} m² </strong>  "<br>"` 
+
+    if (largura > 0 & largura < 4) {
+        tot.innerHTML = `Guias usadas: <strong> 5cm </strong>`          
+    } 
+    
+    else if (largura > 3 & largura < 8) {
+        tot.innerHTML = `Guias usadas: <strong> 7cm </strong>`
+    }
+    
+    else if (largura > 7) {
+        tot.innerHTML = `Guias usadas: <strong> 9cm </strong>`
+         
+    }
+
+    else {
+      tot.innerHTML = `Guias usadas: <strong> 12cm </strong>`
+    }
+        
+        }
+    </script>
 </body>
 </html>
